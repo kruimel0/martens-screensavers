@@ -8,4 +8,4 @@ Currently:
 - T.I.F.F.-like floating
 - Energy-saving rotating pixel on 2 speeds
 
-If you have suggestions, feel free to post them on 
+If you have suggestions, feel free to post them on https://forum.athom.com/discussion/1376/screensavers
