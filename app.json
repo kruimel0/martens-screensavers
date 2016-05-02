@@ -38,6 +38,20 @@
 			}
 		},
 		{
+			"name": "red_sleep",
+			"title": {
+				"en": "Red Sleep",
+				"nl": "Rode Slaap"
+			}
+		},
+		{
+			"name": "red_slow_sleep",
+			"title": {
+				"en": "Red Slow Sleep",
+				"nl": "Rode Langzame Slaap"
+			}
+		},
+		{
 			"name": "TIFF",
 			"title": {
 				"en": "Knightrider's TIFF",

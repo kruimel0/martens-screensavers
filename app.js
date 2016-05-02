@@ -254,3 +254,82 @@ animation_faint_rainbow.register(function(err, result){
 	})
 })
 //-------------------Faint Rainbow Animation Stop ---------------------------------------------------
+
+//-------------------red Sleep Animation Start ---------------------------------------------------
+var frames_red_sleep = [];
+var frame_red_sleep = [];
+
+// for every pixel...
+for( var pixel = 0; pixel < 24; pixel++ ) {
+	if( pixel < 1) {
+		frame_red_sleep.push({
+			r: 25,	g: 0,	b: 0
+		});
+	} else {
+		frame_red_sleep.push({
+			r: 0, g: 0, b: 0
+		})
+	}
+}
+frames_red_sleep.push(frame_red_sleep);
+
+var animation_red_sleep = new Animation({
+	
+    options: {
+        fps     : 1, 	// real frames per second
+        tfps    : 60, 	// target frames per second. this means that every frame will be interpolated 60 times
+        rpm     : 16,	// rotations per minute
+    },
+    frames    : frames_red_sleep
+})
+
+animation_red_sleep.register(function(err, result){
+	Homey.manager('ledring').registerScreensaver('red_sleep', animation_red_sleep)
+	if( err ) return Homey.error(err);
+	animation_red_sleep.on('screensaver_start', function( screensaver_id ){
+		Homey.log('Screensaver started')
+	})
+	animation_red_sleep.on('screensaver_stop', function( screensaver_id ){
+		Homey.log('Screensaver stopped')
+	})
+})
+//-------------------red Sleep Animation Stop ---------------------------------------------------
+//-------------------red Slow Sleep Animation Start ---------------------------------------------------
+var frames_red_slow_sleep = [];
+var frame_red_slow_sleep = [];
+
+// for every pixel...
+for( var pixel = 0; pixel < 24; pixel++ ) {
+	if( pixel < 1) {
+		frame_red_slow_sleep.push({
+			r: 25,	g: 0,	b: 0
+		});
+	} else {
+		frame_red_slow_sleep.push({
+			r: 0, g: 0, b: 0
+		})
+	}
+}
+frames_red_slow_sleep.push(frame_red_slow_sleep);
+
+var animation_red_slow_sleep = new Animation({
+	
+    options: {
+        fps     : 1, 	// real frames per second
+        tfps    : 60, 	// target frames per second. this means that every frame will be interpolated 60 times
+        rpm     : 1,	// rotations per minute
+    },
+    frames    : frames_red_slow_sleep
+})
+
+animation_red_slow_sleep.register(function(err, result){
+	Homey.manager('ledring').registerScreensaver('red_slow_sleep', animation_red_slow_sleep)
+	if( err ) return Homey.error(err);
+	animation_red_sleep.on('screensaver_start', function( screensaver_id ){
+		Homey.log('Screensaver started')
+	})
+	animation_red_sleep.on('screensaver_stop', function( screensaver_id ){
+		Homey.log('Screensaver stopped')
+	})
+})
+//-------------------red Slow Sleep Animation Stop ---------------------------------------------------
