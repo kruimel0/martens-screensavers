@@ -1,0 +1,58 @@
+{
+    "id": "martens.screensavers",
+    "name": {
+        "en": "Screensavers",
+        "nl": "Screensavers"
+    },
+    "version": "0.0.1",
+    "compatibility": "0.x || 1.x",
+    "author": {
+        "name": "Koen Martens",
+        "email": "koen-martens@hotmail.com"
+    },
+    "images": {
+      "large": "./assets/images/large.jpg",
+      "small": "./assets/images/small.jpg"
+    },
+    "category": "appliances",
+    "description": {
+    	"en": "Screensavers app for Homey",
+		"nl": "Screensavers app voor Homey"
+    },
+    "dependencies": {
+    		"net": "*"
+    },
+	"screensavers": [
+		{
+			"name": "white_sleep",
+			"title": {
+				"en": "White Sleep",
+				"nl": "Witte Slaap"
+			}
+		},
+		{
+			"name": "white_slow_sleep",
+			"title": {
+				"en": "White Slow Sleep",
+				"nl": "Witte Langzame Slaap"
+			}
+		},
+		{
+			"name": "TIFF",
+			"title": {
+				"en": "Nightrider's TIFF",
+				"nl": "Nightrider's TIFF"
+			}
+		},
+		{
+			"name": "faint_rainbow",
+			"title": {
+				"en": "Rainbow on 10% intensity",
+				"nl": "Regenboog op 10% intensiteit"
+			}
+		}
+	],
+	"permissions": [
+		"homey:manager:ledring"
+	]
+}
