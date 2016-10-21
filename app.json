@@ -4,7 +4,7 @@
         "en": "Screensavers",
         "nl": "Screensavers"
     },
-    "version": "0.0.1",
+    "version": "0.0.2",
     "compatibility": "0.x || 1.x",
     "author": {
         "name": "Koen Martens",
@@ -63,6 +63,20 @@
 			"title": {
 				"en": "Rainbow on 10% intensity",
 				"nl": "Regenboog op 10% intensiteit"
+			}
+		},
+		{
+			"name": "full_white",
+			"title": {
+				"en": "Full white led ring",
+				"nl": "Volledig witte led ring"
+			}
+		},
+		{
+			"name": "raining",
+			"title": {
+				"en": "Rain-like animation",
+				"nl": "Regenachtige animatie"
 			}
 		}
 	],

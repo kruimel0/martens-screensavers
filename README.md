@@ -1,9 +1,14 @@
 # Screensavers for Athom Homey
 
-Version 0.0.1
+Version 0.0.2
 Add screensavers to your Homey!
 
-Currently:
+Changelog:
+0.02:
+- Added full white screensaver
+- Added rain-like screensaver (thanks Phuturist!)
+
+0.01:
 - Rainbow on 10% intensity
 - T.I.F.F.-like floating
 - Energy-saving rotating pixel on 2 speeds

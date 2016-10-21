@@ -333,3 +333,88 @@ animation_red_slow_sleep.register(function(err, result){
 	})
 })
 //-------------------red Slow Sleep Animation Stop ---------------------------------------------------
+//------------------- Raining Animation Start ---------------------------------------------------
+var frames_raining = [];
+var frame_raining = [];
+var randomNumbers = [];
+
+// for every pixel...
+for (var pixel = 0; pixel < 24; pixel++) {
+    for (var i = 0; i < 8; i++) {
+        randomNumbers[i] = randomPixel(0,23);
+    }
+	if (isInArray(pixel, randomNumbers)) {
+		frame_raining.push({
+			r: 0, g: 0,	b: 255
+		});
+    } else {
+		frame_raining.push({
+			r: 0, g: 0, b: 0
+		})
+	}
+}
+
+function randomPixel (low, high) {
+    return Math.floor(Math.random() * (high - low + 1) + low);
+}
+function isInArray(value, array) {
+  return array.indexOf(value) > -1;
+}
+
+frames_raining.push(frame_raining);
+
+var animation_raining = new Animation({
+    options: {
+        fps     : 1, 	// real frames per second
+        tfps    : 12, 	// target frames per second. this means that every frame will be interpolated 60 times
+        rpm     : 24,	// rotations per minute
+    },
+    frames    : frames_raining
+})
+
+animation_raining.register(function(err, result){
+	Homey.manager('ledring').registerScreensaver('raining', animation_raining)
+	if( err ) return Homey.error(err);
+	animation_raining.on('screensaver_start', function( screensaver_id ){
+		Homey.log('Screensaver started')
+	})
+	animation_raining.on('screensaver_stop', function( screensaver_id ){
+		Homey.log('Screensaver stopped')
+	})
+})
+//------------------- Rain Animation Stop ---------------------------------------------------
+//-------------------Full White Animation Start ---------------------------------------------------
+var frames_full_white = [];
+var frame_full_white = [];
+
+// for every pixel...
+for( var pixel = 0; pixel < 24; pixel++ ) {	
+		{
+		frame_full_white.push({
+			r: 10, g: 10, b: 10
+		})
+	}
+}
+frames_full_white.push(frame_full_white);
+
+var animation_full_white = new Animation({
+	
+    options: {
+        fps     : 1, 	// real frames per second
+        tfps    : 60, 	// target frames per second. this means that every frame will be interpolated 60 times
+        rpm     : 0,	// rotations per minute
+    },
+    frames    : frames_full_white
+})
+
+animation_full_white.register(function(err, result){
+	Homey.manager('ledring').registerScreensaver('full_white', animation_full_white)
+	if( err ) return Homey.error(err);
+	animation_full_white.on('screensaver_start', function( screensaver_id ){
+		Homey.log('Screensaver started')
+	})
+	animation_full_white.on('screensaver_stop', function( screensaver_id ){
+		Homey.log('Screensaver stopped')
+	})
+})
+//-------------------Full White Animation Stop ---------------------------------------------------
